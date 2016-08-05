@@ -8,3 +8,10 @@ addons:
     - mongodb-3.2-precise
     packages:
     - mongodb-org-server
+deploy:
+  provider: heroku
+  api_key:
+    secure: cavpzsoGBiRUXMKF/6XDGizysZ+Tosz873x3xIwMHwQKOR8p6RMCnHD7/SglDJUA04eED2x00YTJN5O5Jav8poy3PlyFXm43IFLPpbH0+036CG0Jru8lpPjQFTYaPE1MS8LXHPkxvy1pf4nLTi5bSBBQZqOUwMVL38jhAQNmi8vc+uPFWvB3YBXJaZqXihpWcnvj0NOBa7CH4N5I2mrX1JOCFM/juobkkOubTw62zOx2T7GkjYSJtqhsSNqFd82h5C77wujfWuA44ztrZFl1KWg4ylfiCdyh9RlNKx0prCBSHXeUq9W/5XxrgNpg7eLkD/FSUaZVRNTVtSaFhC37XJtYMGWJ7IY90yuG4b0v9a1gf6WbdjHRNbk6cjljYM4un1Hix5Z+oz3MwrzpOBVnDDDZ7aHjF5layL2uMqbOTqzOxFCIaeYUx5SzfmZExxMxT6sRSSlNu/li/x4CQu34WrZCn/x6ZE4z22XJlSuIqDKV8I0Lkb7DMOucbpRSANENnWL1ajtv4/PUaiWRvTG9M1IVotDouqP/g6Xmzh+Kg+LfDqsxltNUia7iCWZUnQrwJKaVXpdQQmcEn9wX9ptt08DZkRSSCRiE7z0eyQwTj488nO3y2UaEXovFTIX/JOX6FbhpBut4BOz7+mGDvHb7MkDzbN8d973+z7axxe+1WZE=
+  app: arcane-atoll-40883
+  on:
+    repo: mkuehn10/mongo-shopping-list
