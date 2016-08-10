@@ -12,7 +12,7 @@ var app = server.app;
 chai.use(chaiHttp);
 
 describe('Shopping List', function() {
-    
+
     before(function(done) {
         this.timeout(10000);
         server.runServer(function() {
@@ -45,14 +45,22 @@ describe('Shopping List', function() {
                 res.should.be.json;
                 res.body.should.be.a('array');
                 res.body.should.have.length(3);
-                res.body[0].should.be.a('object');
-                res.body[0].should.have.property('_id');
-                res.body[0].should.have.property('name');
-                res.body[0]._id.should.be.a('string');
-                res.body[0].name.should.be.a('string');
-                res.body[0].name.should.equal('Broad beans');
-                res.body[1].name.should.equal('Peppers');
-                res.body[2].name.should.equal('Tomatoes');
+                res.body.forEach(function(item) {
+                    item.should.be.a('object');
+                    item.should.have.property('_id');
+                    item.should.have.property('name');
+                    item._id.should.be.a('string');
+                    item.name.should.be.a('string');
+                    //console.log(item);
+                });
+                // res.body[0].should.be.a('object');
+                // res.body[0].should.have.property('_id');
+                // res.body[0].should.have.property('name');
+                // res.body[0]._id.should.be.a('string');
+                // res.body[0].name.should.be.a('string');
+                // res.body[0].name.should.equal('Broad beans');
+                // res.body[1].name.should.equal('Peppers');
+                // res.body[2].name.should.equal('Tomatoes');
                 done();
             });
     });
