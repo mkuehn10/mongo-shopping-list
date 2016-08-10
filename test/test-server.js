@@ -14,6 +14,7 @@ chai.use(chaiHttp);
 describe('Shopping List', function() {
     
     before(function(done) {
+        this.timeout(10000);
         server.runServer(function() {
             Item.create({
                 name: 'Broad beans'
@@ -29,6 +30,7 @@ describe('Shopping List', function() {
     });
 
     after(function(done) {
+        this.timeout(10000);
         Item.remove(function() {
             done();
         });
