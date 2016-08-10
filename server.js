@@ -17,6 +17,7 @@ var runServer = function(callback) {
 
         app.listen(config.PORT, function() {
             console.log('Listening on localhost:' + config.PORT);
+            console.log('Connected to MongoDB at: ' + config.DATABASE_URL);
             if (callback) {
                 callback();
             }
